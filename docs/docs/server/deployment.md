@@ -14,7 +14,7 @@ Claude Code Router Server supports multiple deployment methods, from local devel
 docker run -d \
   --name claude-code-router \
   -p 3456:3456 \
-  -v ~/.claude-code-router:/app/.claude-code-router \
+  -v ~/.claude-code-router:/root/.claude-code-router \
   musistudio/claude-code-router:latest
 ```
 
@@ -31,7 +31,7 @@ services:
     ports:
       - "3456:3456"
     volumes:
-      - ./config:/app/.claude-code-router
+      - ./config:/root/.claude-code-router
     environment:
       - LOG_LEVEL=info
       - HOST=0.0.0.0
